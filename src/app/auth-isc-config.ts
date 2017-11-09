@@ -36,6 +36,7 @@ export const IscConfigManual: AuthConfig = {
   */
 
  // retrieve by calling https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/jwks, only two of 5 keys are present here
+ // your keys wil be different, make sure you modify them accordingly!
  jwks: { 'keys': [
     {
         'kty': 'RSA',
