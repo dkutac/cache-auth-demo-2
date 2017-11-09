@@ -1,12 +1,13 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
+import { AppSettings } from './app-settings';
 
 export const IscConfigDynamic: AuthConfig = {
 
  // Url of the Identity Provider
- issuer: 'https://desktop-mcrlqhd/cache/oauth2',
+ issuer: 'https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2',
 
  // URL of the Cache Authorization endpoint
- loginUrl: 'https://desktop-mcrlqhd/cache/oauth2/authorize',
+ loginUrl: 'https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/authorize',
 
  // URL of the SPA to redirect the user to after login
  redirectUri: window.location.origin + '/',

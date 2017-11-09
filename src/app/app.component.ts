@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { OAuthService, JwksValidationHandler } from 'angular-oauth2-oidc';
 import { IscConfigDynamic } from './auth-isc-config-dynamic-discovery';
 import { IscConfigManual } from './auth-isc-config';
+import { AppSettings } from './app-settings';
 
 @Component({
   selector: 'app-daily-deals',
@@ -12,8 +13,7 @@ import { IscConfigManual } from './auth-isc-config';
 export class AppComponent {
   title = 'Daily Deals';
 
- // DK: modify this property to enable/disable OAuth2 Dynamic Discovery
- private useDynamicDiscovery: Boolean = false;
+ private useDynamicDiscovery: Boolean = AppSettings.DYNAMIC_DISCOVERY;
 
 constructor(private oauthService: OAuthService, private authService: AuthService) {
     this.oauthService.setStorage(sessionStorage);

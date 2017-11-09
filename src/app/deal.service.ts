@@ -3,12 +3,13 @@ import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { AuthService } from './auth.service';
 
 import { Deal } from './deal';
+import { AppSettings } from './app-settings';
 
 @Injectable()
 export class DealService {
   // Define the routes we are going to interact with
-  private publicDealsUrl = 'https://desktop-mcrlqhd/cache/api/deals/public';
-  private privateDealsUrl = 'https://desktop-mcrlqhd/cache/api/deals/private';
+  private publicDealsUrl = 'https://' + AppSettings.RES_SERVER_HOST + '/cache/api/deals/public';
+  private privateDealsUrl = 'https://' + AppSettings.RES_SERVER_HOST + '/cache/api/deals/private';
 
   constructor(private http: Http, private authService: AuthService) { }
 

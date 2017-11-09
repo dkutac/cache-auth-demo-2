@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { OAuthService, JwksValidationHandler } from 'angular-oauth2-oidc';
-// import { IscConfigManual } from './auth-isc-config';
-// import { IscConfigDynamic } from './auth-isc-config-dynamic-discovery';
-
 
 @Injectable()
 export class AuthService {
@@ -40,5 +37,6 @@ public get givenName() {
   }
   return claims['sub'];
 }
+
 
 }

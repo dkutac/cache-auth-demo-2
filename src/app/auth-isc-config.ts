@@ -1,14 +1,15 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
+import { AppSettings } from './app-settings';
 
 export const IscConfigManual: AuthConfig = {
 
  // Url of the Identity Provider
- issuer: 'https://desktop-mcrlqhd/cache/oauth2',
+ issuer: 'https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2',
 
  // URL of the Cache Authorization endpoint
- loginUrl: 'https://desktop-mcrlqhd/cache/oauth2/authorize',
+ loginUrl: 'https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/authorize',
 
- userinfoEndpoint: 'https://desktop-mcrlqhd/cache/oauth2/userinfo',
+ userinfoEndpoint: 'https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/userinfo',
 
  // URL of the SPA to redirect the user to after login
  redirectUri: window.location.origin + '/',
@@ -23,7 +24,7 @@ export const IscConfigManual: AuthConfig = {
 
  /*
   in order to figure out what JWKS Cache exposes please use this link
-  (from Cache oauth2 server metadata): https://desktop-mcrlqhd/cache/oauth2/jwks
+  (from Cache oauth2 server metadata): https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/jwks
 
   for some reason, even though we can successfully perform discovery and retrieve jwks,
   we do not store access token which Cache issues,
@@ -31,10 +32,10 @@ export const IscConfigManual: AuthConfig = {
   coming too late from the server to be used to validate jwt
 
   sometimes it is necessary to accept ssl certificate by alling
-  https://desktop-mcrlqhd/cache/oauth2/.well-known/openid-configuration url manually
+  https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/.well-known/openid-configuration url manually
   */
 
- // retrieve by calling https://desktop-mcrlqhd/cache/oauth2/jwks, only two of 5 keys are present here
+ // retrieve by calling https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/jwks, only two of 5 keys are present here
  jwks: { 'keys': [
     {
         'kty': 'RSA',
