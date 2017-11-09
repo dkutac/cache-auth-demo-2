@@ -1,0 +1,39 @@
+<h3 class="text-center">Daily Deals</h3>
+
+  <!-- We are going to get an array of deals stored in the publicDeals variable. We'll loop over that variable here using the ngFor directive -->
+  <div class="col-sm-4" *ngFor="let deal of publicDeals">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{deal.name}}</h3>
+      </div>
+      <div class="panel-body">
+        {{deal.description}}
+      </div>
+      <div class="panel-footer">
+        <ul class="list-inline">
+          <li>Original</li>
+          <li class="pull-right">Sale</li>
+        </ul>
+        <ul class="list-inline">
+          <li><a class="btn btn-danger">$ {{deal.originalPrice}}</a></li>
+          <li class="pull-right"><a class="btn btn-success">$ {{deal.salePrice}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- We are going to use the authService.isUserAuthenticated property to see if the user is logged in or not. 
+    If they are not logged in we'll encourage them to login, otherwise if they are logged in, 
+    we'll provide a handy link to private deals. -->
+  <div class="col-sm-12" *ngIf="!authService.isUserAuthenticated">
+    <div class="jumbotron text-center">
+      <h2>Get More Deals By Logging In</h2>
+    </div>
+  </div>
+
+  <div class="col-sm-12" *ngIf="authService.isUserAuthenticated">
+    <div class="jumbotron text-center">
+      <h2>View Private Deals</h2>
+      <a class="btn btn-lg btn-success" routerLink="/special">Private Deals</a>
+    </div>
+  </div>
