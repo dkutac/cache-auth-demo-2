@@ -3,5 +3,5 @@ export class AppSettings {
     public static RES_SERVER_HOST = 'desktop-mcrlqhd';
 
     // DK: modify this property to enable/disable OAuth2 Dynamic Discovery
-    public static DYNAMIC_DISCOVERY = false;
+    public static DYNAMIC_DISCOVERY = true;
 }

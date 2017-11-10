@@ -10,7 +10,7 @@ export const IscConfigDynamic: AuthConfig = {
  loginUrl: 'https://' + AppSettings.AUTH_SERVER_HOST + '/cache/oauth2/authorize',
 
  // URL of the SPA to redirect the user to after login
- redirectUri: window.location.origin + '/',
+ redirectUri: window.location.origin + '/deals/',
 
  // The SPA's id. The SPA is registerd with this id at the auth-server
  clientId: 'AitY_L-1DzTIohoBJQWo6CvXyRfe4NvtjXM3MeplNiE',

@@ -18,7 +18,7 @@ export class DealService {
   getPublicDeals() {
 
     return this.http
-      .get(this.publicDealsUrl)
+      .post(this.publicDealsUrl, null)
       .toPromise()
       .then(response => response.json() as Deal[])
       .catch(this.handleError);
@@ -34,7 +34,7 @@ export class DealService {
 
     // @TODO: put headers into request
     return this.http
-      .get(this.privateDealsUrl, options)
+      .post(this.privateDealsUrl, null, options)
       .toPromise()
       .then(response => response.json() as Deal[])
       .catch(this.handleError);
