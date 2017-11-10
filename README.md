@@ -27,8 +27,5 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Instructions on setting up Cache Authorization server
-please be patient, these instructions are under construction
-
-## Resource server setup
-please be patient, instructions are under construction...
+## Instructions on setting up and using the demo
+Please refer to Wiki pages of this project.
